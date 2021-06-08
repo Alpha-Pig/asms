@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.Dao.Route.RegionDao">
+    <select id="findByCity" resultType="Region">
+        select * from region where r_name = #{city}
+    </select>
+    <insert id="AddnewRegion" parameterType="Region">
+        insert into `region`(`r_name`) values(#{r_name})
+    </insert>
+</mapper>

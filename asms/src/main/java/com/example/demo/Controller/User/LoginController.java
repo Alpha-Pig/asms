@@ -9,10 +9,12 @@ import java.util.Map;
 
 @RestController
 public class LoginController {
-
+    private UserService userService;
     @RequestMapping(value = "/admin/Login", method = RequestMethod.POST)
     public Map<String, Object> login(@RequestBody User user) {
         Map<String, Object> map = new HashMap<>();
+        String password=user.getPassword();
+        String username=user.getUsername();
         if (user.getUsername().equals("admin") && user.getPassword().equals("123456")) {
             map.put("message", "密码错误");
             return map;
